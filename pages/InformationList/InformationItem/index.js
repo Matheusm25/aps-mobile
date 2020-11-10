@@ -11,6 +11,11 @@ import {
 
 
 export default function Login({ description, level}) {
+  const levels = {
+    1: 'Público',
+    2: 'Diretor',
+    3: 'Ministro',
+  };
 
   return (
     <View style={styles.container}>
@@ -21,7 +26,7 @@ export default function Login({ description, level}) {
         </View>
         <View style={styles.body}>
           <Text style={styles.level}>Nível acesso</Text>
-          <Text style={styles.level}>{level}</Text>
+          <Text style={styles.level}>{levels[level]}</Text>
         </View>
       </View>
     </View>    
@@ -30,11 +35,11 @@ export default function Login({ description, level}) {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: '#fff',
+    borderColor: "#2ed573",
     borderWidth: 2,
     marginVertical: 5,
     width: 280,
-    height: 60,
+    minHeight: 60,
     borderRadius: 12,
   },
   flex: {
@@ -45,6 +50,8 @@ const styles = StyleSheet.create({
   },
   description: {
     color: "#fff",
+    fontSize: 14,
+    width: 150,
   },
   level: {
     color: '#fff',
